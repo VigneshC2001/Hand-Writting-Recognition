@@ -1,5 +1,4 @@
-# Hand-Writting-Recognition
-## Mini Project 
+# Hand-Writting-Recognition 
 ## To create dataset
         import pyscreenshot as ImageGrab
         import time
