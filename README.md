@@ -1,6 +1,6 @@
 # Hand-Writting-Recognition
 Mini Project :
-    #to create dataset
+#to create dataset
     import pyscreenshot as ImageGrab
     import time
     images_folder="captured_images/10/"
@@ -11,7 +11,7 @@ Mini Project :
         im.save(images_folder+str(i)+'.png')
         print("clear screen now and redraw now........")
         
-        #to genrate the dataset
+ #to genrate the dataset
 import cv2
 import csv
 import glob
