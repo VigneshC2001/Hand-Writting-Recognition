@@ -1,6 +1,6 @@
 # Hand-Writting-Recognition
-Mini Project :
-#to create dataset
+##Mini Project :
+##to create dataset
         import pyscreenshot as ImageGrab
         import time
         images_folder="captured_images/10/"
@@ -11,7 +11,7 @@ Mini Project :
             im.save(images_folder+str(i)+'.png')
             print("clear screen now and redraw now........")
 
- #to genrate the dataset
+ ##to genrate the dataset
         import cv2
         import csv
         import glob
@@ -49,18 +49,18 @@ Mini Project :
                     writer = csv.writer(f)
                     writer.writerow(data)
 
-#load the dataset
+##load the dataset
                 import pandas as pd
                 from sklearn.utils import shuffle
                 data=pd.read_csv('dataset.csv')
                 data=shuffle(data)
                 data
 
-#separation of dependent and independent variable
+##separation of dependent and independent variable
                 X = data.drop(["label"],axis=1)
                 Y= data["label"]
 
-#preview of one image using matplotlib
+##preview of one image using matplotlib
                 %matplotlib inline
                 import matplotlib.pyplot as plt
                 import cv2
@@ -69,23 +69,23 @@ Mini Project :
                 print(Y[idx])
                 plt.imshow(img)
 
-#Train-Test split
+##Train-Test split
                 from sklearn.model_selection import train_test_split
                 train_x,test_x,train_y,test_y = train_test_split(X,Y, test_size = 0.2)
 
-#Fit the model using svc and also to save the model using joblib
+##Fit the model using svc and also to save the model using joblib
                 import joblib
                 from sklearn.svm import SVC
                 classifier=SVC(kernel="linear", random_state=6)
                 classifier.fit(train_x,train_y)
                 joblib.dump(classifier, "model/digit_recognizer")
 
-#calculate accuracy
+##calculate accuracy
                 from sklearn import metrics
                 prediction=classifier.predict(test_x)
                 print("Accuracy= ",metrics.accuracy_score(prediction, test_y))
 
-#prediction of image drawn in paint
+##prediction of image drawn in paint
 
                 import joblib
                 import cv2
